@@ -14,4 +14,4 @@ Screenshots:
 
 ![image](https://github.com/user-attachments/assets/8c2541d8-1690-490b-98ea-75b7247a97f0)
 
-![image](https://github.com/user-attachments/assets/bf18249b-86bd-4ab4-8cd4-623aea0b3c88)
+![image](https://github.com/user-attachments/assets/95513543-21b8-4c5f-8972-2f9c485acdc8)
