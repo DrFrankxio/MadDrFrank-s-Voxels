@@ -210,10 +210,50 @@ function MineKhan() {
 			let r = 0, g = 0, b = 0, d = 0
 			for (let x = 0; x < 16; x++) {
 				for (let y = 0; y < 16; y++) {
+					if(Math.random()<0.33){
+						d = Math.random() * 0.25 + 0.65
+						r = 0x00 * d
+						g = 0xff * d
+						b = 0x00 * d
+						setPixel(n, x, y, r, g, b)
+					}else{
+						d = Math.random() * 0.25 + 0.65
+						r = 0x88 * d
+						g = 0x88 * d
+						b = 0x88 * d
+						setPixel(n, x, y, r, g, b)
+					}
+				}
+			}
+		},
+		fractium_lodium: function(n) {
+			let r = 0, g = 0, b = 0, d = 0
+			for (let x = 0; x < 16; x++) {
+				for (let y = 0; y < 16; y++) {
+					if(Math.random()<0.33){
+						d = Math.random() * 0.25 + 0.65
+						r = 0x00 * d
+						g = 0xff * d
+						b = 0x00 * d
+						setPixel(n, x, y, r, g, b)
+					}else{
+						d = Math.random() * 0.25 + 0.65
+						r = 0xdd * d
+						g = 0x88 * d
+						b = 0x44 * d
+						setPixel(n, x, y, r, g, b)
+					}
+				}
+			}
+		},
+		fractium: function(n) {
+			let r = 0, g = 0, b = 0, d = 0
+			for (let x = 0; x < 16; x++) {
+				for (let y = 0; y < 16; y++) {
 					d = Math.random() * 0.25 + 0.65
-					r = 0x00 * d
-					g = 0xff * d
-					b = 0x00 * d
+					r = 0xdd * d
+					g = 0x88 * d
+					b = 0x44 * d
 					setPixel(n, x, y, r, g, b)
 				}
 			}
@@ -892,11 +932,10 @@ function MineKhan() {
 			textures: ["blueberry", "blueberry", "blueberry"],
 		},
 		{ name: "stoneBricks" },
-		{ 
-	      name: "waterBlock",
-	      transparent: true,
-		  shadow: false,
-	    },
+		{
+			name: "fractium",
+			textures: ["fractium", "fractium", "fractium"],
+		},
 		{
 			name: "lodium",
 			textures: ["lodium", "lodium", "lodium"],
@@ -1045,6 +1084,10 @@ function MineKhan() {
 				"birch_planks_v2", "birch_planks_v2",//Left-right.
 				"birch_chest_front", "birch_planks_v2",//Back-front.
 			],
+		},
+		{
+			name: "fractium_lodium",
+			textures: ["fractium_lodium", "fractium_lodium", "fractium_lodium"],
 		},
 		/*
 		{ name: "sprucePlanks" },
@@ -4000,6 +4043,7 @@ function MineKhan() {
 							world.spawnBlock(-1 + wx, top - 3, -1 + wz, blockIds.coco)
 						}
 
+						/*
 						//"Lodium":
 						if(Math.random()<0.0625){
 							world.spawnBlock(1 + wx, top - 3, 1 + wz, blockIds.lodium)
@@ -4013,6 +4057,21 @@ function MineKhan() {
 						if(Math.random()<0.0625){
 							world.spawnBlock(-1 + wx, top - 3, -1 + wz, blockIds.lodium)
 						}
+
+						//"Fractium":
+						if(Math.random()<0.0625){
+							world.spawnBlock(1 + wx, top - 3, 1 + wz, blockIds.fractium)
+						}
+						if(Math.random()<0.0625){
+							world.spawnBlock(1 + wx, top - 3, -1 + wz, blockIds.fractium)
+						}
+						if(Math.random()<0.0625){
+							world.spawnBlock(-1 + wx, top - 3, 1 + wz, blockIds.fractium)
+						}
+						if(Math.random()<0.0625){
+							world.spawnBlock(-1 + wx, top - 3, -1 + wz, blockIds.fractium)
+						}
+						*/
 
 						//Bottom leaves
 						for (let x = -2; x <= 2; x++) {
@@ -4101,11 +4160,31 @@ function MineKhan() {
 					}
 
 					for(let y=ground;0<y;y--){
-						if (Math.random() < 0.05) {
+						if (Math.random() < 0.1) {
 							//let y = random() * ground | 0 + 1
 							//y = y < ground ? y : ground
 							if (this.getBlock(i, y, k)) {
 								this.setBlock(i, y < ground ? y : ground, k, blockIds.lodium)
+							}
+						}
+					}
+
+					for(let y=ground;0<y;y--){
+						if (Math.random() < 0.1) {
+							//let y = random() * ground | 0 + 1
+							//y = y < ground ? y : ground
+							if (this.getBlock(i, y, k)) {
+								this.setBlock(i, y < ground ? y : ground, k, blockIds.fractium_lodium)
+							}
+						}
+					}
+
+					for(let y=ground;0<y;y--){
+						if (Math.random() < 0.5) {
+							//let y = random() * ground | 0 + 1
+							//y = y < ground ? y : ground
+							if (this.getBlock(i, y, k)) {
+								this.setBlock(i, y < ground ? y : ground, k, blockIds.fractium)
 							}
 						}
 					}
