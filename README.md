@@ -7,3 +7,11 @@ Steps:
 2.- Open it with your browser.
 
 3.- ¡Enjoy!
+
+Screenshots:
+
+![image](https://github.com/user-attachments/assets/b4fcaa3b-4c76-4da6-83a4-72b157f70f15)
+
+![image](https://github.com/user-attachments/assets/8c2541d8-1690-490b-98ea-75b7247a97f0)
+
+![image](https://github.com/user-attachments/assets/cb11810a-5ec8-4c0a-a960-867a94f9586d)
